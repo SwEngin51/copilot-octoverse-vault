@@ -1,4 +1,4 @@
-# Chat Mode in GitHub Copilot
+# Ask Mode in GitHub Copilot
 
 ## ✅ General Availability (GA) Features
 - Unset Chat tool sets VS Code now enables you to deﬁne tool sets, either through a proposed API or through the UI.
