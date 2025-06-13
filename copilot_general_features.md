@@ -1,0 +1,90 @@
+# General Features in GitHub Copilot (Mode-Agnostic)
+
+## ✅ General Availability (GA) Features
+- {  "gh-news": {   "tools": ["list_notifications", "dismiss_notification", "get_notification_details"],   "description": "Manage GH notification",   "icon": "github-project"  } } To create a tool set, run the Conﬁgure Tool Sets > Create new tool sets ﬁle command from the Command Palette.
+- Learn more about tools sets in our documentation.
+- This feature implements the MCP authorization speciﬁcation for clients, and supports both: ● 2025-3-26 spec, where the MCP server behaves as an authorization server.
+- If the MCP server implements the draft spec and leverages GitHub or Entra as the auth server, you can manage which MCP servers have access to your account:   You can also manage which account that server should use (via the gear button in the previous quick pick):  For other MCP servers that rely on dynamic client registration, we include the auth state in the same place as everything else, for example with Linear:  There you can also sign out.
+- We have also introduced the command Authentication: Remove Dynamic Authentication Providers that allows you to clean up any of these dynamic client registrations.
+- This will throw away the client id issued to VS Code and all data associated with this authentication provider.
+- tools: ['codebase', 'fetch', 'findTestFiles', 'githubRepo', 'search', 'usages'] --- # Planning mode instructions You are in planning mode.
+- We've aligned the implementation and usage of these two related concepts, however they each have distinct purposes.
+- command from the Command Palette.
+- Learn more about instruction ﬁles in our documentation.
+- For example, you can add a prompt ﬁle for creating a front-end component, or to perform a security review.
+- command from the Command Palette.
+- command from the Command Palette.
+- Learn more about prompt ﬁles in our documentation.
+- This integration enables more dynamic and context-aware coding assistance.
+- You can read more about how to install and use MCP servers in our documentation.
+- For instance, if you wanted to include the latest documentation on a topic like MCP, you can ask to fetch the full documentation (which is conveniently ready for an LLM to consume) and use that in a prompt.
+- Usages tool The #usages tool is a combination of "Find All References", "Find Implementation", and "Go to Deﬁnition".
+- This is not currently enabled for the terminal tool, but we plan to develop an approval system for the terminal in future releases.
+- But it won't run terminal commands or do anything else automatically.
+- We’re actively exploring support for Copilot Business and Enterprise customers and will share updates in future releases.
+- We made several improvements to the UX of tool usages this month: ● Terminal commands are now shown inline, so you can keep track of which commands were run.
+- ● Conﬁrm a terminal command with the ⌘Enter shortcut.
+- Additionally, we've removed the client-side rate limit of 14 interactions per 10 minutes.
+- Note that service-side usage rate limits still apply.
+- Alternatively, you can change the model that is used for code completions via Change Completions Model command in the Command Palette or the Conﬁgure Code Completions item in the Copilot menu in the title bar.
+- You can attach images in multiple ways: ● Drag and drop images from your OS or from the Explorer view ● Paste an image from your clipboard ● Attach a screenshot of the VS Code window (select the paperclip 📎 button > Screenshot Window) A warning is shown if the selected model currently does not have the capability to handle the ﬁle type.
+- ● Gemini 2.0 Flash: Google’s latest model shows high capabilities for code suggestions, documentation, and explaining code.
+- This milestone, we're introducing a new copilot-debug terminal command to help you debug your programs using VS Code.
+- Copilot usage graph VS Code extensions can use the VS Code API to build on the capabilities of Copilot.
+- You can now see a graph of an extension's Copilot usage in the Runtime Status view.
+- To learn more about Copilot code review, head to the GitHub code review documentation.
+- To start learn more about a symbol, just select the symbol link to jump to that symbol's deﬁnition: You can also hover over the symbol link to see which ﬁle the symbol is deﬁned in:  To start exploring a symbol in more detail, just right-click on the symbol link to bring up a context menu with options, such as Go to Implementations and Go to References:  Basic symbol links should work for any language that supports Go to Deﬁnition.
+- You can also right-click on one of these paths to open a context menu with additional commands, such as copying a relative path to the resource, or revealing the ﬁle in your operating system's ﬁle explorer.
+- This command can recommend a testing framework, provide steps to set up and conﬁgure it, and suggest a VS Code extension to provide testing integration in VS Code.
+- When you use the /tests command to generate tests for your code, it can recommend /setupTests and testing extensions if looks like such an integration has not been set up yet in your workspace.
+- In addition, you can now deﬁne instructions for test generation in settings or import them from a ﬁle.
+- We improved the test generation ﬂow by looking for an existing test ﬁle and generating the new tests into that ﬁle, appending them at the end.
+- Renamed Code Actions for generating tests and documentation When you place the cursor on an identiﬁer, such as a method name, GitHub Copilot gives you Code Actions to generate tests or documentation.
+- To better reﬂect their purpose, we renamed these Code Actions to Generate Tests using Copilot and Generate Documentation using Copilot.
+- We are constantly experimenting to identify the best models for different tasks, balancing performance and capability while being committed to quality, safety, and security.
+- This hint only shows when the Copilot extension is installed and there is a single terminal that has not had any interaction.
+- It's easy to dismiss the message permanently by right-clicking it.
+- Ask questions using Bing search and enterprise knowledge bases GitHub Copilot Enterprise users in VS Code can now ask questions that are enriched with context from web results and your enterprise's knowledge bases.
+- You can also ask questions about your enterprise's knowledge bases, which are collections of Markdown repositories containing documentation, directly from VS Code.
+- The supported IntelliSense features include: ● Go to deﬁnition by using ctrl click / cmd click or F12 ● Hovers ● Go to implementation ● Go to type deﬁnition IntelliSense can even be used with @workspace to learn about any workspace symbols that are used in Copilot responses.
+- Use the ⌘I keyboard shortcut when the terminal is focused to bring it up.
+- Once a command is suggested, use ⌘Enter to run the command in the terminal or ⌥Enter to insert the command into the terminal.
+- Copilot powered rename suggestions button Copilot-powered rename suggestions can now be triggered by using the sparkle icon in the rename control.
+- After the ﬁrst request, the control expands to take up more space.
+- Theme: GitHub Light Colorblind (Beta) We've repositioned the rerun and feedback controls, and made the toggle control for viewing diffs more prominent alongside the Accept and Discard buttons.
+- @terminal /explain slash command A new @terminal /explain slash command is available, which is optimized for explaining commands or errors.
+- Without /explain, @terminal is optimized to suggest a ﬁx.
+- Once a command is suggested, use ⌘Enter to run the command in the terminal or ⌥Enter to insert the command into the terminal.
+- The Learn more button takes you to our documentation on authentication requirements.
+- In this example, you can think of #codebase as asking @workspace the question ﬁrst, and then adding that response to the question you're asking @terminal.
+- Terminal workspace context The terminal no longer automatically pulls in workspace context, which could take some time.
+- Pick #file from the suggestion control in the input, and then select a ﬁle from the Quick Pick that appears.
+- If there are remaining errors, you can reﬁne the ﬁx by clicking on the offered follow-up action.
+- Here are the mappings from the old to new prompts: Old New @workspace /terminal how do I list files?
+- @terminal how do I list files?
+- @workspace /explain #terminalSelection @terminal #terminalSelection @workspace /explain #terminalLastCommand @terminal #terminalLastCommand In addition, command suggestions saw signiﬁcant improvements this release.
+- Terminal command suggestions now know about the operating system and the shell used.
+- File paths and symbols in @workspace responses are clickable links.
+- Terminal Quick Fixes When a failed command is run in the terminal, Copilot will now offer a Quick Fix to explain what happened.
+- This can be triggered via the sparkle icon (⌘.) next to the current terminal prompt.
+- Terminal command suggestions Copilot can now offer CLI command suggestions via the ⌘I keybinding when the terminal is focused.
+- Finding the exact command you're looking for in the Command Palette has never been easier!
+- Overall, the UX is more compact to align with other "Quick Open" experiences like the Command Palette (less padding everywhere, user and Copilot icons are smaller, buttons are inline instead of being in a title bar).
+- ● Double-clicking on the bottom sash.
+- Explain terminal selection Copilot now has the ability to explain the current terminal selection by selecting Copilot: Explain This in the terminal's context menu (Right-click or Shift + Right-click depending on the platform).
+- The natural language search results are currently placed below keyword-matching results and ordered by descending similarity score, but we plan to ﬁx the ordering next month so that the search results continue to be arranged by their table of contents group.
+- Natural language search currently relies on Copilot embeddings.
+- GitHub Pull Request and Issues integration When the GitHub Pull Requests and Issues extension is installed and enabled and you are viewing a review thread, it is now possible to directly apply a review comment using Copilot.
+- You can remove sessions from history by clicking the X button on each row.
+- When a codeblock is focused, the commands in the codeblock toolbar can also be invoked from the Command Palette, or you can assign keybindings to them.
+- Run in Terminal has a keybinding assigned by default, ⌃⌥Enter.
+- Additional codeblock commands There are two new commands in the codeblock toolbar, Insert into New File and Run in Terminal.
+- Similar commands in the Command Palette Unset With the power of Copilot, the Command Palette is now able to show similar command results.
+
+## 🧪 Experimental Features
+- ● Experimental - view the experimental features (@tag:experimental) This setting controls a new feature that is actively being developed and may be unstable.
+
+## 👀 Preview Features
+- This preview feature provides a seamless workﬂow when working with data science or documentation notebooks.
+- ● Preview - view the preview features (@tag:preview) This setting controls a new feature that is still under reﬁnement yet ready to use.
+- (This feature is in preview.) ● Review changes: for a deeper review of all uncommitted changes, select the Copilot Code Review button in the Source Control view, which you can also do in your pull request on GitHub.com.
